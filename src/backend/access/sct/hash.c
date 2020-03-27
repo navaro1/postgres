@@ -31,6 +31,11 @@
 #include "utils/builtins.h"
 #include "utils/index_selfuncs.h"
 #include "utils/rel.h"
+PG_MODULE_MAGIC;
+
+Datum scthandler(PG_FUNCTION_ARGS);
+
+PG_FUNCTION_INFO_V1(scthandler);
 
 /* Working state for hashbuild and its callback */
 typedef struct
@@ -53,7 +58,7 @@ static void hashbuildCallback(Relation index,
  * and callbacks.
  */
 Datum
-hashhandler(PG_FUNCTION_ARGS)
+scthandler(PG_FUNCTION_ARGS)
 {
 	IndexAmRoutine *amroutine = makeNode(IndexAmRoutine);
 

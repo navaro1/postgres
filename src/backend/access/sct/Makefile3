@@ -8,15 +8,9 @@
 #
 #-------------------------------------------------------------------------
 
-
-
-#subdir = src/backend/access/sct
-#top_builddir = ../../../..
-#include $(top_builddir)/src/Makefile.global
-
-EXTENSION = sct
-MODULE_big = sct
-PG_CONFIG = pg_config
+subdir = src/backend/access/hash
+top_builddir = ../../../..
+include $(top_builddir)/src/Makefile.global
 
 OBJS = \
 	hash.o \
@@ -29,8 +23,5 @@ OBJS = \
 	hashsort.o \
 	hashutil.o \
 	hashvalidate.o
-PGXS := $(shell $(PG_CONFIG) --pgxs)
-include $(PGXS)
 
-
-#include $(top_srcdir)/src/backend/common.mk
+include $(top_srcdir)/src/backend/common.mk

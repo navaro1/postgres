@@ -48,6 +48,9 @@ static void hashbuildCallback(Relation index,
 							  void *state);
 
 
+
+
+
 /*
  * Hash handler function: return IndexAmRoutine with access method parameters
  * and callbacks.
